@@ -53,6 +53,7 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 header .tituloFlex {
@@ -132,10 +133,55 @@ h3 {
 .textoSobreMi .boton {
     background: none;
     color: #ff502f;
-    box-shadow: 11px 25px 61px -25px rgba(0, 0, 0, 0.75);
+    box-shadow: 20px 15px 38px -12px rgba(0, 0, 0, .8);
 }
 
 .textoSobreMi .boton:hover {
     background-color: #ff502f;
     color: #ffffff;
+}
+
+/******SECCION SOBRE MI********/
+
+
+.contenedorServicios{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.contenedorServicios .servicio{
+    width: 25%;
+    padding: 34px 30px 38px 30px;
+    border-radius: 10px;
+    margin: 0 20px 40px 20px;
+    position: relative;
+}
+
+.servicio h4{
+    font-size: 30px;
+    margin: 0;
+}
+
+.servicio p{
+    margin-bottom: 20px;
+    height: 180px;
+}
+.contenedorServicios .violeta {
+    background: linear-gradient(to top, #ff502f, #ec9b3b);
+    box-shadow: 20px 15px 38px -12px rgba(255,80,47,0.5);
+}
+.contenedorServicios .celeste {
+    background: linear-gradient(to top, #0028ff, #3e64ff);
+    box-shadow: 0 12px 30px 0 rgba(0,40,255,0.45);
+}
+
+.servicio .ondas{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.servicio .icono{
+    float: right;
 }
