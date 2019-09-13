@@ -58,8 +58,17 @@ header {
 
 header .tituloFlex {
     display: flex;
+    flex-direction: column;
+    align-content: center;
     justify-content: center;
-    margin-top: 18vh;
+    height: 80vh;
+}
+
+.contenedorTitulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .contenedorTitulo {
@@ -98,6 +107,10 @@ h2 {
 
 
 /******SECCION SOBRE MI********/
+
+#sobreMi {
+    padding-bottom: 5rem;
+}
 
 h3 {
     text-align: center;
@@ -141,15 +154,20 @@ h3 {
     color: #ffffff;
 }
 
-/******SECCION SOBRE MI********/
 
+/******SERVICIOS********/
 
-.contenedorServicios{
+#servicios {
+    padding-bottom: 5rem;
+}
+
+.contenedorServicios {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.contenedorServicios .servicio{
+
+.contenedorServicios .servicio {
     width: 25%;
     padding: 34px 30px 38px 30px;
     border-radius: 10px;
@@ -157,31 +175,201 @@ h3 {
     position: relative;
 }
 
-.servicio h4{
+.servicio h4 {
     font-size: 30px;
     margin: 0;
 }
 
-.servicio p{
+.servicio p {
     margin-bottom: 20px;
     height: 180px;
 }
+
 .contenedorServicios .violeta {
     background: linear-gradient(to top, #ff502f, #ec9b3b);
-    box-shadow: 20px 15px 38px -12px rgba(255,80,47,0.5);
-}
-.contenedorServicios .celeste {
-    background: linear-gradient(to top, #0028ff, #3e64ff);
-    box-shadow: 0 12px 30px 0 rgba(0,40,255,0.45);
+    box-shadow: 20px 15px 38px -12px rgba(255, 80, 47, 0.5);
 }
 
-.servicio .ondas{
+.contenedorServicios .celeste {
+    background: linear-gradient(to top, #0028ff, #3e64ff);
+    box-shadow: 0 12px 30px 0 rgba(0, 40, 255, 0.45);
+}
+
+.servicio .ondas {
     position: absolute;
     width: 100%;
     left: 0;
     bottom: 0;
 }
 
-.servicio .icono{
+.servicio .icono {
     float: right;
+}
+
+
+/******MIS TRABAJOS********/
+
+#misTrabajos {
+    padding-bottom: 5rem;
+}
+
+button.owl-prev,
+button.owl-next {
+    font-size: 4rem !important;
+}
+
+button.owl-prev {
+    margin-right: 3rem !important;
+}
+
+button.owl-prev:hover,
+button.owl-next:hover {
+    background: none !important;
+}
+
+#misTrabajos span {
+    color: #ff502f !important;
+}
+
+
+/******PORQUE TRABAJAR CONMIGO********/
+
+#porqueTrabajar {
+    padding-bottom: 5rem;
+}
+
+.contenedorTrabajar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 6rem;
+}
+
+.contenedorTrabajar .item {
+    width: 28%;
+    text-align: center;
+}
+
+.contenedorTrabajar ul li {
+    list-style: none;
+    margin-top: 2rem;
+}
+
+.contenedorTrabajar ul li:nth-child(2) {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.contenedorTrabajar ul li:nth-child(3) {
+    line-height: 30px;
+}
+
+.contenedorTrabajar .item i {
+    font-size: 5rem;
+    color: #ff502f;
+}
+
+
+/******BLOG********/
+
+.contenedorPublicaciones {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedorPublicaciones .publicacion {
+    width: 30%;
+    background-color: #ffffff;
+    text-align: center;
+    padding-bottom: 1rem;
+    box-shadow: 20px 15px 38px -12px rgba(0, 0, 0, .8);
+}
+
+.contenedorPublicaciones .publicacion img {
+    width: 100%;
+}
+
+.publicacion .boton {
+    background: none;
+    color: #ff502f;
+    box-shadow: 20px 15px 38px -12px rgba(0, 0, 0, .8);
+    margin-left: 0;
+}
+
+.publicacion .boton:hover {
+    background-color: #ff502f;
+    color: #ffffff;
+}
+
+#blog {
+    background-color: #f9f8eb;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+.publicacion .contenidoBlog {
+    width: 100%;
+}
+
+.publicacion .contenidoBlog h4 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.publicacion .contenidoBlog p {
+    line-height: 30px;
+}
+
+
+/******QUE ESPERAS********/
+
+#queEsperas {
+    margin: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bg-queEsperas.jpg);
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.contenidoEsperas {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contenidoEsperas h3 {
+    margin: 0;
+    color: #ffffff;
+}
+
+.contenidoEsperas .boton:hover {
+    background-color: #ff502f;
+}
+
+
+/******QUE ESPERAS********/
+
+.formContacto {
+    display: flex;
+}
+
+.formContacto .informacion {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formContacto .formulario {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.formulario input[text],
+.formulario input[number] {
+    width: 50%;
 }
