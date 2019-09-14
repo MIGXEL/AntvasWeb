@@ -212,9 +212,9 @@ h3 {
         display: flex;
         flex-direction: column;
     }
-    .contenedorSobreMi .miImagen {
-        max-width: 300px;
-        height: 300px;
+    .contenedorSobreMi .miImagen div {
+        max-width: 200px;
+        height: 200px;
     }
     .contenedorSobreMi .textoSobreMi {
         width: 90%;
