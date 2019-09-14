@@ -123,6 +123,9 @@ h2 {
 }
 
 @media (max-width:680px) {
+    header p {
+        font-size: 40px;
+    }
     .menu span i {
         display: block;
     }
@@ -215,9 +218,15 @@ h3 {
     .contenedorSobreMi .miImagen div {
         max-width: 200px;
         height: 200px;
+        margin-bottom: 1rem;
     }
     .contenedorSobreMi .textoSobreMi {
         width: 90%;
+        text-align: center;
+    }
+    .textoSobreMi .boton {
+        display: block;
+        width: 100%;
     }
 }
 
