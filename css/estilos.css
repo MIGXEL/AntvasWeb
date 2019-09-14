@@ -1,14 +1,19 @@
 * {
     box-sizing: border-box;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
+
 body {
     margin: 0;
     font-family: 'Oswald', sans-serif;
 }
+
+
 /**************HEADER*******************/
+
 header {
     box-shadow: 0px 20px 18px -20px rgba(0, 0, 0, 0.75);
 }
@@ -19,12 +24,13 @@ header .contenedor {
     align-items: center;
 }
 
-.menu span i{
+.menu span i {
     font-size: 40px;
     color: #ff502f;
     display: none;
 }
-.menu{
+
+.menu {
     transition: ease-in-out .3s;
 }
 
@@ -115,29 +121,29 @@ h2 {
 .contenedorTitulo .boton:hover {
     background-color: #ff502f;
 }
-@media (max-width:680px){
-    .menu span i{
+
+@media (max-width:680px) {
+    .menu span i {
         display: block;
     }
-    header nav{
+    header nav {
         position: absolute;
         top: 60px;
         left: 0;
-        background: rgba(0,0,0,.9);
+        background: rgba(0, 0, 0, .9);
         width: 100%;
         display: none;
     }
-    header ul{
+    header ul {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
     }
-    header ul li{
-        margin-bottom:20px !important;
+    header ul li {
+        margin-bottom: 20px !important;
     }
-    header ul li a{
+    header ul li a {
         font-size: 2rem;
     }
     header h1 {
@@ -145,13 +151,13 @@ h2 {
         color: #ffffff;
         margin: 0;
     }
-    
     header h2 {
         font-size: 20px;
         color: #ffffff;
         margin-top: 0;
     }
 }
+
 
 /******SECCION SOBRE MI********/
 
@@ -171,7 +177,7 @@ h3 {
     align-items: center;
 }
 
-.contenedorSobreMi .miImagen {
+.contenedorSobreMi .miImagen div {
     max-width: 400px;
     height: 400px;
     border-radius: 50%;
@@ -200,7 +206,8 @@ h3 {
     background-color: #ff502f;
     color: #ffffff;
 }
-@media (max-width:680px){
+
+@media (max-width:680px) {
     .contenedorSobreMi {
         display: flex;
         flex-direction: column;
@@ -213,6 +220,7 @@ h3 {
         width: 90%;
     }
 }
+
 
 /******SERVICIOS********/
 
@@ -264,7 +272,8 @@ h3 {
 .servicio .icono {
     float: right;
 }
-@media (max-width:680px){
+
+@media (max-width:680px) {
     .contenedorServicios {
         flex-direction: column;
     }
@@ -272,6 +281,7 @@ h3 {
         width: 90%;
     }
 }
+
 
 /******MIS TRABAJOS********/
 
@@ -335,14 +345,16 @@ button.owl-next:hover {
     font-size: 5rem;
     color: #ff502f;
 }
-@media (max-width:680px){
+
+@media (max-width:680px) {
     .contenedorTrabajar {
-      flex-direction: column;
+        flex-direction: column;
     }
     .contenedorTrabajar .item {
         width: 90%;
     }
 }
+
 
 /******BLOG********/
 
@@ -393,7 +405,8 @@ button.owl-next:hover {
 .publicacion .contenidoBlog p {
     line-height: 30px;
 }
-@media (max-width:680px){
+
+@media (max-width:680px) {
     .contenedorPublicaciones {
         flex-direction: column;
         align-items: center;
@@ -403,6 +416,7 @@ button.owl-next:hover {
         margin-bottom: 2rem;
     }
 }
+
 
 /******QUE ESPERAS********/
 
@@ -435,9 +449,11 @@ button.owl-next:hover {
 
 
 /******CONTACTO********/
-#contacto{
+
+#contacto {
     margin-bottom: 5rem;
 }
+
 .formContacto {
     display: flex;
 }
@@ -450,16 +466,17 @@ button.owl-next:hover {
     align-items: center;
     background: #ff502f;
     border-right: 2px solid #000000;
-    box-shadow: 7px 0px 11px -4px rgba(0,0,0,0.75);
-
+    box-shadow: 7px 0px 11px -4px rgba(0, 0, 0, 0.75);
 }
-.formContacto .informacion h4{
+
+.formContacto .informacion h4 {
     font-size: 3rem;
     margin: 0;
     color: #ffffff;
     letter-spacing: 3px;
 }
-.formContacto .informacion h5{
+
+.formContacto .informacion h5 {
     font-size: 1.5rem;
     margin: 0;
     color: #ffffff;
@@ -471,35 +488,38 @@ button.owl-next:hover {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    
 }
 
-form{
+form {
     width: 60%;
     padding-left: 2rem;
 }
 
-input{
+input {
     margin-bottom: 1rem;
     height: 2.5rem;
     width: 100%;
-    border:none;
+    border: none;
     border-bottom: 2px solid #ff502f;
-    box-shadow: 0px 5px 0px -3px rgba(0,0,0,0.33);
+    box-shadow: 0px 5px 0px -3px rgba(0, 0, 0, 0.33);
 }
-input:focus{
+
+input:focus {
     outline: none;
 }
-textarea{
+
+textarea {
     width: 100%;
     height: 3rem;
-    border:none;
+    border: none;
     border-bottom: 2px solid #ff502f;
-    box-shadow: 0px 5px 0px -3px rgba(0,0,0,0.33);
+    box-shadow: 0px 5px 0px -3px rgba(0, 0, 0, 0.33);
 }
-textarea:focus{
+
+textarea:focus {
     outline: none;
 }
+
 .formulario .boton {
     background: none;
     color: #ff502f;
@@ -512,7 +532,7 @@ textarea:focus{
     color: #ffffff;
 }
 
-@media (max-width:680px){
+@media (max-width:680px) {
     .formContacto {
         flex-direction: column;
         align-items: center;
@@ -523,66 +543,68 @@ textarea:focus{
     }
     .formContacto .formulario {
         width: 90%;
-        
     }
-    form{
+    form {
         width: 100%;
     }
-    
 }
+
+
 /******FOOTER********/
 
-footer{
+footer {
     background: #414141;
     height: 25vh;
     padding: 30px 0 30px 0;
     margin-bottom: 0;
 }
-.contenidoFooter{
+
+.contenidoFooter {
     display: flex;
     width: 100%;
     justify-content: space-around;
     align-items: center;
 }
-.redesSociales{
+
+.redesSociales {
     display: flex;
     justify-content: space-around;
     width: 30%;
     margin: 0;
 }
 
-.redesSociales li{
+.redesSociales li {
     list-style: none;
     margin-right: .5rem;
     padding: 10px 15px;
     border-radius: 3px;
     transform: rotateY(0);
     transition: ease-in-out .6s;
-
 }
 
-.redesSociales li:hover{
+.redesSociales li:hover {
     background: #ff502f;
     transform: rotateY(360deg);
     transition: ease-in-out .6s;
 }
-.redesSociales li a i{
-    font-size: 2rem;
 
+.redesSociales li a i {
+    font-size: 2rem;
 }
-.textoFooter p{
+
+.textoFooter p {
     color: #f9f8eb;
     font-size: 20px;
     margin-bottom: 0;
 }
-.textoFooter span{
+
+.textoFooter span {
     color: #ff502f;
 }
 
-@media (max-width:680px){
-    .contenidoFooter{
+@media (max-width:680px) {
+    .contenidoFooter {
         flex-direction: column;
         align-items: center;
     }
-    
 }
