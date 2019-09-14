@@ -48,12 +48,6 @@ $(document).ready(function(){
 
     })
 
-    $('header nav ul li').click(function(){
-
-        $('header nav').slideUp();
-
-    })
-
 
 
 
