@@ -31,13 +31,14 @@ header .contenedor {
 }
 
 .menu {
-    transition: ease-in-out .3s;
+    transition: .4s ease-in;
 }
 
-header p {
-    font-size: 60px;
-    margin: 0;
-    color: #ff502f;
+header img {
+    max-width: 200px;
+    height: 80px;
+    width: 100%;
+    overflow: hidden;
 }
 
 header ul {

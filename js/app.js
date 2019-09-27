@@ -20,10 +20,15 @@ $('.owl-carousel').owlCarousel({
 
 $(document).ready(function() {
 
+    var windowHieght = $(window).height();
+    var barraAltura = $('.menu').innerHeight();
+
+    console.log(barraAltura);
+
     $(window).scroll(function() {
 
-        scroll = $(window).scrollTop();
-        if (scroll > 100) {
+        var scroll = $(window).scrollTop();
+        if (scroll > 1) {
 
             $('.menu').css({ "position": "fixed" });
             $('.menu').css({ "width": "100%" });
