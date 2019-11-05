@@ -124,7 +124,7 @@ h2 {
 }
 
 @media (max-width:680px) {
-    header p {
+    header span {
         font-size: 40px;
     }
     .menu span i {
@@ -543,6 +543,12 @@ textarea:focus {
 }
 
 @media (max-width:680px) {
+    #contacto h3 {
+        margin: 20px 0;
+    }
+    .informacion {
+        margin: 20px 0;
+    }
     .formContacto {
         flex-direction: column;
         align-items: center;
@@ -556,6 +562,12 @@ textarea:focus {
     }
     form {
         width: 100%;
+        padding: 0;
+    }
+    form input,
+    form textarea {
+        padding: 0 10px;
+        margin-top: 10px;
     }
 }
 
@@ -613,8 +625,19 @@ footer {
 }
 
 @media (max-width:680px) {
+    footer {
+        padding-bottom: 0;
+    }
     .contenidoFooter {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+    }
+    .contenidoFooter ul li a i {
+        font-size: 1.5rem;
+    }
+    .textoFooter p {
+        font-size: 1rem;
     }
 }

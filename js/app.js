@@ -33,10 +33,14 @@ $(document).ready(function() {
             $('.menu').css({ "position": "fixed" });
             $('.menu').css({ "width": "100%" });
             $('.menu').css({ "top": "0" });
-            $('.menu').css({ "background": "rgba(0,0,0,.9)" });
+            $('.menu').css({ "background": "#ffffff" });
+            $('.menu ul li a').css({ "color": "#ff502f" });
+            $('a span').css({ "color": "#ff502f" });
             $('.menu p').css({ "font-size": "40px" });
             $('.menu').css({ "box-shadow": "rgba(0,0,0,.22) 6px 1px 1px" });
             $('.menu').css({ "z-index": "100" });
+            $('header nav').css({ "top": barraAltura });
+
 
         } else {
 
@@ -44,16 +48,12 @@ $(document).ready(function() {
             $('.menu').css({ "background": "none" });
             $('.menu').css({ "box-shadow": "none" });
             $('.menu p').css({ "font-size": "60px" });
+            $('.menu ul li a').css({ "color": "#ffffff" });
 
         }
 
     })
 
-    $('.menuIcon').click(function() {
-
-        $('header nav').slideToggle();
-
-    })
 
     $('.owl-carousel').owlCarousel({
         loop: true,
