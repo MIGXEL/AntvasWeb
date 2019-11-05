@@ -54,6 +54,13 @@ $(document).ready(function() {
 
     })
 
+    $('.menuIcon').click(function() {
+
+        $('header nav').slideToggle();
+
+    })
+
+
 
     $('.owl-carousel').owlCarousel({
         loop: true,
