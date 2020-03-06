@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+/**************HEADER*******************/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppons', sans-serif;
+    font-family: 'Oswald', sans-serif;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 1000000;
+    animation: menuIn 2s ease-in-out;
+    box-shadow: none;
+}
+
+.sticky{
+    padding: 15px 100px;
+    background: #ffffff;
+}
+
+header .logo{
+    position: relative;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+
+header .menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+header .menu li{
+    position: relative;
+    list-style: none;
+}
+
+header .menu li a{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    letter-spacing: 2px;
+    font-weight: 700;
+    transition: 0.6s;
+}
+header .cabezote{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/bg-header.jpg);
+    background-size: cover;
+}
+
+.sticky .logo,
+.sticky .menu li a,
+.sticky .menuMovil li a{
+    color: #000000;
+}
+
+/* ------ ------ MENU HAMBURGUEZA ------ ------ */
+
+.toggle{
+    /* background: #ffffff; */
+    height: 40px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle span{
+    
+    width: 40px;
+    height: 6px;
+    background: #ffffff;
+    transition: 0.6s;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.20);
+
+    
+}
+
+
+.toggle span:nth-child(2){
+    transform: translateY(5px);
+}
+.toggle span:nth-child(3){
+    transform: translateY(-5px);
+}
+
+.toggle.active span:nth-child(1){
+    transform: translateY(-25px);
+    opacity: 0;
+    transition: 0.3s;
+}
+.toggle.active span:nth-child(4){
+    transform: translateY(25px);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.toggle.active span:nth-child(2){
+    transform: translateY(11px) rotate(45deg);
+    transition-delay: .2s;
+}
+.toggle.active span:nth-child(3){
+    transform: rotate(-45deg);
+    transition-delay: .2s;
+}
+
+.sticky .toggle{
+    height: 30px;
+    width: 40px;
+}
+.sticky .toggle span{
+    background: #000000;
+    width: 40px;
+}
+
+.sticky span:nth-child(2){
+    transform: translateY(4px);
+}
+.sticky span:nth-child(3){
+    transform: translateY(-4px);
+}
+header.sticky .active span:nth-child(2) {
+    transform: translateY(7px) rotate(45deg);
+    transition-delay: .2s;
+}
+
+@keyframes menuIn {
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes menuOut {
+    0%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+/* ------ ------ MENU MOVIL ------ ------ */
+
+header .menuMovil{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+    transition: 0.6s ease-out;
+}
+header .menuMovil li{
+    position: relative;
+    list-style: none;
+}
+
+header .menuMovil li a{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    letter-spacing: 2px;
+    font-weight: 700;
+    transition: 0.6s;
+}
+
+/* ------ ------ ------ ------ ------ ------ ------ 
+ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
+ ------ ------ ------ ------ ------ ------ ------ */
+@media (min-width:1200px) {
+}
+/* ------ ------ ------ ------ ------ ------ ------
+ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
+ ------ ------ ------ ------ ------ ------ ------ */
+@media (max-width:1199px) and (min-width:992px) {
+
+    header{
+        flex-direction: column;
+        transition: 0.6s ease-in-out;
+    }
+    header .menuMovil{
+        padding: 40px;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    header .menuMovil li{
+        width: 100%;
+        padding: 30px 100px;
+        text-align: center;
+    }
+    header .menuMovil li a{
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+    }
+}
+/* ------ ------ ------ ------ ------ ------ ------
+ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
+ ------ ------ ------ ------ ------ ------ ------ */
+@media (max-width:991px) and (min-width:768px) {
+    header{
+        flex-direction: column;
+    }
+    header .menu{
+        display: none;
+    }
+    header .menuMovil{
+        padding: 40px;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    header .menuMovil li{
+        width: 100%;
+        padding: 30px 100px;
+        text-align: center;
+    }
+    header .menuMovil li a{
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+    }
+   
+}
+/* ------ ------ ------ ------ ------ ------ ------
+MOVIL (XS revisamos en 320px)
+ ------ ------ ------ ------ ------ ------ ------*/
+@media (max-width:767px) {
+    .sticky{
+        padding: 20px 20px;
+        background: #ffffff;
+    }
+    header .cabezote{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    header{
+        flex-direction: column;
+        padding: 20px 20px;
+    }
+    header .menu{
+        display: none;
+    }
+    header .menuMovil{
+        padding: 40px;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    header .menuMovil li{
+        width: 100%;
+        padding: 30px 100px;
+        text-align: center;
+    }
+    header .menuMovil li a{
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+    }
+}
