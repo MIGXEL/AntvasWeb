@@ -9,7 +9,7 @@ let mostrar = false;
 
 
 window.addEventListener("scroll", function(){
-    let header = document.querySelector('header');
+    /* let header = document.querySelector('header'); */
     header.classList.toggle("sticky", window.scrollY > 0);
     if (window.scrollY > 0) {
         header.classList.add('sticky');
@@ -28,6 +28,7 @@ hamburgueza.addEventListener("click", function(){
     if (screen.width > 1199) {
         console.log(screen.width);
         if (mostrar) {
+            menu.style.boxShadow = "none";
             menu.style.display = "flex";
             menu.style.animation = "menuIn 1s ease-in-out";
             

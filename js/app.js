@@ -20,7 +20,7 @@ $('.owl-carousel').owlCarousel({
 
 $(document).ready(function() {
 
-    var windowHieght = $(window).height();
+/*     var windowHieght = $(window).height();
     var barraAltura = $('.menu').innerHeight();
 
     console.log(barraAltura);
@@ -58,7 +58,7 @@ $(document).ready(function() {
 
         $('header nav').slideToggle();
 
-    })
+    }) */
 
 
 
