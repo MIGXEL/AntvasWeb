@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+:root{
+    --color-primario: #b89f57;
+    --color-secundario: #6f5f35;
+    --color-tercero: #223756;
+    --color-cuarto: #1b3142;
+    --color-quinto: #dadada;
+
+}
 
 html {
     scroll-behavior: smooth;
@@ -123,13 +131,13 @@ h3 {
 }
 
 .contenedorServicios .violeta {
-    background: linear-gradient(to top, #ff502f, #ec9b3b);
-    box-shadow: 20px 15px 38px -12px rgba(255, 80, 47, 0.5);
+    background: linear-gradient(to top, var(--color-secundario), var(--color-primario));
+    box-shadow: 20px 15px 38px -12px rgba(184, 159, 87, 0.5);
 }
 
 .contenedorServicios .celeste {
-    background: linear-gradient(to top, #0028ff, #3e64ff);
-    box-shadow: 0 12px 30px 0 rgba(0, 40, 255, 0.45);
+    background: linear-gradient(to top, var(--color-cuarto), var(--color-tercero));
+    box-shadow: 0 12px 30px 0 rgba(34, 55, 86, 0.5);
 }
 
 .servicio .ondas {
@@ -213,7 +221,7 @@ button.owl-next:hover {
 
 .contenedorTrabajar .item i {
     font-size: 5rem;
-    color: #ff502f;
+    color: var(--color-primario);
 }
 
 @media (max-width:680px) {

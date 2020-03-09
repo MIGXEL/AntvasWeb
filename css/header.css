@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+:root{
+    --color-primario: #b89f57;
+    --color-secundario: #6f5f35;
+    --color-tercero: #223756;
+    --color-cuarto: #1b3142;
+    --color-quinto: #dadada;
 
+}
+body{
+    background: var(--color-quinto);
+}
 
 
 header{
@@ -18,13 +28,16 @@ header{
 
 .sticky{
     padding: 15px 100px;
-    background: #ffffff;
+    background: var(--color-tercero);
+    -webkit-box-shadow: 0px -2px 14px 0px;
+    -moz-box-shadow: 0px -2px 14px 0px;
+    box-shadow: 0px -2px 14px 0px;
 }
 
 header .logo{
     position: relative;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--color-tercero);
     text-decoration: none;
     font-size: 2em;
     text-transform: uppercase;
@@ -49,7 +62,7 @@ header .menu li a{
     position: relative;
     margin: 0 15px;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--color-tercero);
     letter-spacing: 2px;
     font-weight: 700;
     transition: 0.6s;
@@ -63,16 +76,18 @@ header .cabezote{
 
 .banner{
     position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 64%, 0 91%);
+    clip-path: polygon(0 0, 100% 0, 100% 64%, 0 91%);
     width: 100%;
     height: 100vh;
-    background: url(../img/bg-header.jpg);
+    background: linear-gradient(to right, rgba(184, 159, 87, 0.6), rgba(111, 95, 53, 0.6)), url(../img/bg-header.jpg);
     background-size: cover;
 }
 
 .sticky .logo,
 .sticky .menu li a,
 .sticky .menuMovil li a{
-    color: #000000;
+    color: var(--color-primario);
 }
 
 /* ------ ------ MENU HAMBURGUEZA ------ ------ */
@@ -92,7 +107,7 @@ header .cabezote{
     
     width: 40px;
     height: 6px;
-    background: #ffffff;
+    background: var(--color-tercero);
     transition: 0.6s;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.20);
 
@@ -132,7 +147,7 @@ header .cabezote{
     width: 40px;
 }
 .sticky .toggle span{
-    background: #000000;
+    background: var(--color-primario);
     width: 40px;
 }
 
@@ -190,7 +205,7 @@ header .menuMovil li a{
     position: relative;
     margin: 0 15px;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--color-tercero);
     letter-spacing: 2px;
     font-weight: 700;
     transition: 0.6s;
@@ -261,7 +276,7 @@ MOVIL (XS revisamos en 320px)
 @media (max-width:767px) {
     .sticky{
         padding: 20px 20px;
-        background: #ffffff;
+        background: var(--color-tercero);
     }
     header .cabezote{
         display: flex;
