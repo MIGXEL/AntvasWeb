@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
 :root{
-    --color-primario: #b89f57;
-    --color-secundario: #6f5f35;
-    --color-tercero: #223756;
-    --color-cuarto: #1b3142;
+    --color-primario: #45eba5;
+    --color-secundario: #21aba5;
+    --color-tercero: #1d566e;
+    --color-cuarto: #163a5f;
     --color-quinto: #dadada;
+    --color-rgba1: linear-gradient(to right, rgba(29, 86, 110, .3), rgba(22, 58, 95, .3));
 
 }
 body{
@@ -37,7 +38,7 @@ header{
 header .logo{
     position: relative;
     font-weight: 700;
-    color: var(--color-tercero);
+    color: var(--color-primario);
     text-decoration: none;
     font-size: 2em;
     text-transform: uppercase;
@@ -56,16 +57,26 @@ header .menu{
 header .menu li{
     position: relative;
     list-style: none;
+    padding: 5px 10px;
+    transition: .6s;
+}
+header .menu li:hover{
+    background: var(--color-tercero);
+    transform: scale(1.1);
 }
 
 header .menu li a{
     position: relative;
     margin: 0 15px;
     text-decoration: none;
-    color: var(--color-tercero);
+    color: var(--color-primario);
     letter-spacing: 2px;
     font-weight: 700;
     transition: 0.6s;
+    font-size: 18px;
+}
+header .menu li:hover a{
+   color: var(--color-primario);
 }
 header .cabezote{
     display: flex;
@@ -76,12 +87,16 @@ header .cabezote{
 
 .banner{
     position: relative;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 64%, 0 91%);
-    clip-path: polygon(0 0, 100% 0, 100% 64%, 0 91%);
+/*     -webkit-clip-path: circle(75.9% at 100% 15%);
+    clip-path: circle(75.9% at 100% 15%); */
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to right, rgba(184, 159, 87, 0.6), rgba(111, 95, 53, 0.6)), url(../img/bg-header.jpg);
+    background: var(--color-rgba1), url(../img/bg-header.jpg);
     background-size: cover;
+}
+.wave{
+    position: absolute;
+    bottom: 0;
 }
 
 .sticky .logo,
@@ -107,7 +122,7 @@ header .cabezote{
     
     width: 40px;
     height: 6px;
-    background: var(--color-tercero);
+    background: var(--color-primario);
     transition: 0.6s;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.20);
 

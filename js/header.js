@@ -3,7 +3,12 @@ let body = document.querySelector("body");
 let header = document.querySelector("header");
 let menu = document.getElementById("menu");
 let menuMovil = document.getElementById("menuMovil");
+let itemTrabajar1 = document.getElementById("itemTrabajar1");
+let itemTrabajar2 = document.getElementById("itemTrabajar2");
+let itemTrabajar3 = document.getElementById("itemTrabajar3");
 let mostrar = false;
+
+
 
 
 
@@ -17,6 +22,25 @@ window.addEventListener("scroll", function(){
     } else {
         header.classList.remove('sticky');
         
+    }
+    
+  
+});
+window.addEventListener("scroll", function(){
+
+    let itemTrabajarTop1 = itemTrabajar1.getBoundingClientRect().top;
+    let itemTrabajarTop2 = itemTrabajar2.getBoundingClientRect().top;
+    let itemTrabajarTop3 = itemTrabajar3.getBoundingClientRect().top;
+    let tamanoPantalla = window.innerHeight/2;
+    if (itemTrabajarTop1 < tamanoPantalla && itemTrabajarTop2 < tamanoPantalla && itemTrabajarTop3 < tamanoPantalla ) {
+        
+        itemTrabajar1.classList.add('animated', 'zoomIn', 'slow');
+        itemTrabajar2.classList.add('animated', 'zoomIn', 'fast');
+        itemTrabajar3.classList.add('animated', 'zoomIn', 'slow');
+        itemTrabajar1.style.opacity = 1;
+        itemTrabajar2.style.opacity = 1;
+        itemTrabajar3.style.opacity = 1;
+
     }
    
 });
