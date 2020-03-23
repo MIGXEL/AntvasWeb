@@ -9,9 +9,24 @@ let itemTrabajar3 = document.getElementById("itemTrabajar3");
 let mostrar = false;
 
 
+/**************************************************************/
+/*********** AGREGANDO CLASE ACTIVE AL MENU (JQUERY)***********/
+/**************************************************************/
+
+$(document).on('click', 'ul li', function(){
+    $(this).addClass('active').siblings().removeClass('active')
+})
 
 
 
+
+
+
+/*************************************/
+/*********** EFECTOS SCROLL***********/
+/*************************************/
+
+/******* Efecto Scroll Menu Fixed */
 
 window.addEventListener("scroll", function(){
     /* let header = document.querySelector('header'); */
@@ -26,6 +41,10 @@ window.addEventListener("scroll", function(){
     
   
 });
+
+
+
+
 window.addEventListener("scroll", function(){
 
     let itemTrabajarTop1 = itemTrabajar1.getBoundingClientRect().top;

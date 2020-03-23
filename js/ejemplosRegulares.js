@@ -1,4 +1,4 @@
-<script type="text/javascript">
+{/* <script type="text/javascript">
 window.onload = function() { //datos para escritura
 escribir = document.getElementById("caja")
 si = "correcto"; 
@@ -36,4 +36,4 @@ function comprobar() {
          correcto(compPag);
          escribir.innerHTML += "Página Web: "+respuesta + "<br/>";
          }
-</script>
+</script> */}

@@ -7,7 +7,8 @@ const btnEnviar = document.getElementById('enviar');
 const valEmail = document.getElementById('validarEmail');
 const valTelefono = document.getElementById('validarTelefono');
 const valNombre = document.getElementById('validarNombre');
-
+const valMensaje = document.getElementById('validarMensaje');
+let boll = true;
 
 
 
@@ -21,10 +22,10 @@ function eventListener(){
 
     document.addEventListener('DOMContentLoaded', inicioApp);
 
-    nombre.addEventListener('blur', validarCampo);
-    telefono.addEventListener('blur', validarCampo);
-    email.addEventListener('blur', validarCampo);
-    mensaje.addEventListener('blur', validarCampo);
+    nombre.addEventListener('blur', validarNombre);
+    telefono.addEventListener('blur', validarTelefono);
+    email.addEventListener('blur', validarEmail);
+    mensaje.addEventListener('blur', validarMensaje);
 
 }
 
@@ -37,91 +38,142 @@ function eventListener(){
 
 function inicioApp(){
 
-    btnEnviar.disabled = true;
-}
-function validarCampo(){
-    console.log(this);
-    // Se valida la longuitud del texto y que no este vacio
-    /* validarLonguitud(this); */
+    if (boll == true) {
 
-    // Se valida solo el campo email
-    if (this.id === 'email') {
-        validarEmail(this);
-        console.log(this);
+        btnEnviar.disabled = true;
+
+    } else {
+        
+        btnEnviar.disabled = false;
+        
     }
-    if (this.id == 'telefono') {
-        validarTelefono(this);
-        console.log(this);
-    }
-    if (this.id == 'nombre') {
-        validarNombre(this);
-        console.log(this);
-    }
-    /* let errores = document.querySelectorAll('error');
-    if (nombre.value !== '' && telefono.value !== '' && email.value !== '' && mensaje.value !== '' ) {
-        if (errores.length === 0) {
-            
+}
+
+
+
+
+
+function validarNombre(){
+    
+    
+    if (nombre.value == '') {
+        
+        nombre.style.borderBottomColor = 'red';
+        valNombre.innerHTML = 'El campo nombre NO debe estar vacio, gracias.'
+        valNombre.classList.add('error', 'fadeIn');        
+        btnEnviar.disabled = true;
+        boll = true;
+        return boll
+
+        
+    }else{
+        
+        if (/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/.test(nombre.value)) {
+            nombre.style.borderBottomColor = 'var(--color-primario)';
+            valNombre.innerHTML = ''
+            valNombre.classList.remove('error', 'fadeIn');
+            valNombre.classList.add('fadeOut', 'slow');
             btnEnviar.disabled = false;
-
-        }
-    } */
-}
-
-/* function validarLonguitud(campo){
-
-    if (campo.value.length > 0) {
-        campo.style.borderBottomColor = 'var(--color-primario)';
-        valEmail.classList.remove('error');
-    } else {
-        campo.style.borderBottomColor = 'red';
-        valEmail.innerHTML = 'Los campos NO deben estar vacios, gracias.'
-        valEmail.classList.add('error');
+            boll = false;
+            inicioApp(boll)
+            
+        } else {
+            nombre.style.borderBottomColor = 'red';
+            valNombre.classList.add('error', 'fadeIn');
+            valNombre.innerHTML = 'Ingrese un nombre válido, gracias. Ejemplo: Miguel'
+            btnEnviar.disabled = true;
+            boll = true;
+            return boll
+            
+        } 
     }
-
-} */
-
-function validarEmail(campo){
-
-    if (/^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(campo.value)) {
-        campo.style.borderBottomColor = 'var(--color-primario)';
-        valEmail.innerHTML = ''
-        valEmail.classList.remove('error');
-    } else {
-        campo.style.borderBottomColor = 'red';
-        valEmail.innerHTML = 'ingresar un email valido, gracias. Ejemplo: correo@correo.cl'
-        valEmail.classList.add('error');
-
-    }
+    
 }
+function validarTelefono(){
 
-function validarTelefono(campo){
+    if (telefono.value == '') {
 
-    if (/^[9|6]{1}([\d]{2}[-]*){3}[\d]{2}$/.test(campo.value)) {
-        campo.style.borderBottomColor = 'var(--color-primario)';
-        valTelefono.innerHTML = ''
-        valTelefono.classList.remove('error', 'fadeIn');
-        valTelefono.classList.add('fadeOut', 'slow');
-        
-    } else {
-        campo.style.borderBottomColor = 'red';
-        valTelefono.classList.remove('fadeOut', 'slow');
+        telefono.style.borderBottomColor = 'red'
+        valTelefono.innerHTML = 'El campo telefono NO debe estar vacio, gracias.'
         valTelefono.classList.add('error', 'animated', 'fadeIn');
-        valTelefono.innerHTML = 'Ingrese un número de telefono válido, gracias. Ejemplo: 975372XXX'
+        btnEnviar.disabled = true;
+        
 
-    } 
+
+    }else{
+        
+        if (/^[9|6]{1}([\d]{2}[-]*){3}[\d]{2}$/.test(telefono.value)) {
+            telefono.style.borderBottomColor = 'var(--color-primario)';
+            valTelefono.innerHTML = ''
+            valTelefono.classList.remove('error', 'fadeIn');
+            valTelefono.classList.add('fadeOut', 'slow');
+            btnEnviar.disabled = false;
+            
+        } else {
+            telefono.style.borderBottomColor = 'red';
+            valTelefono.classList.remove('fadeOut', 'slow');
+            valTelefono.classList.add('error', 'animated', 'fadeIn');
+            valTelefono.innerHTML = 'Ingrese un número de telefono válido, gracias. Ejemplo: 975372XXX'
+            btnEnviar.disabled = true;
+    
+        } 
+    }
+    return true
+
 }
 
-function validarNombre(campo){
+function validarEmail(){
 
-    if (/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/.test(campo.value)) {
-        campo.style.borderBottomColor = 'var(--color-primario)';
-        valNombre.innerHTML = ''
-        valNombre.classList.remove('error');
+    if (email.value == '') {
+
+        email.style.borderBottomColor = 'red'
+        valEmail.innerHTML = 'El campo email NO debe estar vacio, gracias.'
+        valEmail.classList.add('error', 'animated', 'fadeIn');
+        btnEnviar.disabled = true;
+
+
+    }else{
         
-    } else {
-        campo.style.borderBottomColor = 'red';
-        valNombre.classList.add('error');
-        valNombre.innerHTML = 'Revise su nombre, gracias. Ejemplo: Miguel'
+        if (/^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
+            email.style.borderBottomColor = 'var(--color-primario)';
+            valEmail.innerHTML = ''
+            valEmail.classList.remove('error');
+            btnEnviar.disabled = false;
+        } else {
+            email.style.borderBottomColor = 'red';
+            valEmail.innerHTML = 'Ingrese un email válido, gracias. Ejemplo: correo@correo.cl'
+            valEmail.classList.add('error', 'animated', 'fadeIn');
+            btnEnviar.disabled = true;
+    
+        }
+    }
 
-    } 
+}
+
+function validarMensaje(){
+
+    if (mensaje.value == '') {
+
+        mensaje.style.borderBottomColor = 'red'
+        valMensaje.innerHTML = 'El campo Menjase NO debe estar vacio, gracias.'
+        valMensaje.classList.add('error', 'animated', 'fadeIn');
+        btnEnviar.disabled = true;
+
+
+    }else{
+        
+        if (/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]*$/.test(mensaje.value)) {
+            mensaje.style.borderBottomColor = 'var(--color-primario)';
+            valMensaje.innerHTML = ''
+            valMensaje.classList.remove('error');
+            btnEnviar.disabled = false;
+        } else {
+            mensaje.style.borderBottomColor = 'red';
+            valMensaje.innerHTML = 'Escriba un mendaje sin simbolos especiales. Gracias'
+            valMensaje.classList.add('error', 'animated', 'fadeIn');
+            btnEnviar.disabled = true;
+    
+        }
+    }
+
 }

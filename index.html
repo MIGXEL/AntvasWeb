@@ -20,12 +20,12 @@
         <div class="cabezote">
             <a href="#" class="logo">Logo</a>
             <ul id="menu" class="menu">
-                <li><a href="#">home</a></li>
-                <li><a href="#">about</a></li>
+                <li class="active"><a href="#home">home</a></li>
+                <li><a href="#sobreMi">about</a></li>
                 <li><a href="#servicios">Services</a></li>
-                <li><a href="#">Portafolio</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#misTrabajos">Portafolio</a></li>
+                <li><a href="#porqueTrabajar">Elegirme</a></li>
+                <li><a href="#contacto">Contact</a></li>
             </ul>
             <div class="toggle" id="toggle">
                 <span></span>
@@ -36,19 +36,19 @@
 
         </div>
         <ul id="menuMovil" class="menuMovil">
-            <li><a href="#">home</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portafolio</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Contact</a></li>
+            <li class="active"><a href="#home">home</a></li>
+            <li><a href="#sobreMi">about</a></li>
+            <li><a href="#servicios">Services</a></li>
+            <li><a href="#misTrabajos">Portafolio</a></li>
+            <li><a href="#porqueTrabajar">Elegirme</a></li>
+            <li><a href="#contacto">Contact</a></li>
         </ul>
     </header>
 
 
 
     <main>
-        <section class="banner">
+        <section id="home" class="banner">
             <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path fill="#dadada" fill-opacity="1"
                     d="M0,192L40,186.7C80,181,160,171,240,186.7C320,203,400,245,480,261.3C560,277,640,267,720,256C800,245,880,235,960,245.3C1040,256,1120,288,1200,298.7C1280,309,1360,299,1400,293.3L1440,288L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
@@ -60,12 +60,11 @@
                 <h3 class="tituloIzquierda">Sobre mi</h3>
                 <div class="contenedorSobreMi">
                     <div class="miImagen">
-                        <div class="aniview" data-av-animation="slideInLeft slow">
+                        
                             <img src="img/sobremi.svg" alt="">
-                        </div>
+                        
                     </div>
                     <div class="textoSobreMi">
-                        <div class="aniview" data-av-animation="slideInLeft">
 
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate optio voluptatibus
                                 unde omnis excepturi voluptatum, accusamus ipsa qui minima dolor accusantium laboriosam.
@@ -74,17 +73,8 @@
                                 sed, officiis, culpa sint laborum ab architecto numquam qui suscipit! Voluptatibus,
                                 tempore architecto cupiditate praesentium harum
                                 reprehenderit blanditiis enim unde et tempora soluta placeat, fugit modi eum.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate optio voluptatibus
-                                unde omnis excepturi voluptatum, accusamus ipsa qui minima dolor accusantium laboriosam.
-                                Facere, sit rem dolorem architecto repellat sed
-                                magni ullam corrupti nisi vel nobis, earum possimus enim? Excepturi ad fugit, adipisci
-                                sed, officiis, culpa sint laborum ab architecto numquam qui suscipit! Voluptatibus,
-                                tempore architecto cupiditate praesentium harum
-                                reprehenderit blanditiis enim unde et tempora soluta placeat, fugit modi eum.</p>
-
-
+    
                             <a href="#!" class="boton">Ver mis trabajos</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -329,7 +319,7 @@
                         <form action="">
 
                             <input type="text" name="txtNombre" class="nombre" id="nombre" placeholder="Nombre Completo *">
-                            <span id="validarNombre"></span>
+                            <span id="validarNombre" class="animated"></span>
                             <input type="telefono" name="txtTelefono" class="telefono" id="telefono"
                                 placeholder="Telefono/Celular *">
                             <span id="validarTelefono"></span>
