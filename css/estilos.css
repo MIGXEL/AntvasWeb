@@ -5,7 +5,7 @@
     --color-tercero: #1d566e;
     --color-cuarto: #163a5f;
     --color-quinto: #dadada;
-    --color-rgba1: linear-gradient(to right, rgba(29, 86, 110, .3), rgba(22, 58, 95, .3));
+    --color-rgba1: linear-gradient(to right, rgba(29, 86, 110, .7), rgba(22, 58, 95, .7));
 
 }
 
@@ -355,9 +355,18 @@ button.owl-next:hover {
 @media (max-width:680px) {
     .contenedorTrabajar {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
     }
     .contenedorTrabajar .item {
         width: 90%;
+    }
+    .contenedorTrabajar h3{
+        margin: 0;
+    }
+    .contenedorTrabajar ul {
+        width: 100%;
     }
 }
 
@@ -417,11 +426,13 @@ button.owl-next:hover {
 
 @media (max-width:680px) {
     .contenedorPublicaciones {
+        margin: 0;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
     .contenedorPublicaciones .publicacion {
-        width: 80%;
+        width: 90%;
         margin-bottom: 2rem;
     }
 }
@@ -583,22 +594,24 @@ textarea:focus {
 
 
 @media (max-width:680px) {
+    .formContacto{
+        padding: 0;
+    }
     #contacto h3 {
         margin: 20px 0;
     }
     .informacion {
-        margin: 20px 0;
+       padding: 20px;
     }
     .formContacto {
         flex-direction: column;
         align-items: center;
     }
     .formContacto .informacion {
-        width: 90%;
-        height: 30vh;
+        width: 100%;
     }
     .formContacto .formulario {
-        width: 90%;
+        width: 100%;
     }
     form {
         width: 100%;
@@ -672,13 +685,16 @@ footer {
 
 @media (max-width:680px) {
     footer {
-        padding-bottom: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .contenidoFooter {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 20px 0;
+        
     }
     .contenidoFooter ul li a i {
         font-size: 1.5rem;
