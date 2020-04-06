@@ -10,10 +10,6 @@ const valNombre = document.getElementById('validarNombre');
 const valMensaje = document.getElementById('validarMensaje');
 let boll = true;
 
-
-
-
-
 // EVENT LISTENER
 
 eventListener();
@@ -30,28 +26,13 @@ function eventListener(){
 }
 
 
-
-
-
-
 // FUNCIONES
 
 function inicioApp(){
 
-    if (boll == true) {
-
         btnEnviar.disabled = true;
 
-    } else {
-        
-        btnEnviar.disabled = false;
-        
-    }
 }
-
-
-
-
 
 function validarNombre(){
     
@@ -60,66 +41,60 @@ function validarNombre(){
         
         nombre.style.borderBottomColor = 'red';
         valNombre.innerHTML = 'El campo nombre NO debe estar vacio, gracias.'
+        valNombre.classList.remove('fadeOut', 'slow');
         valNombre.classList.add('error', 'fadeIn');        
         btnEnviar.disabled = true;
-        boll = true;
-        return boll
 
         
-    }else{
+    }else if (/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/.test(nombre.value)) {
+        nombre.style.borderBottomColor = 'var(--color-primario)';
+        valNombre.innerHTML = ''
+        valNombre.classList.remove('error', 'fadeIn');
+        valNombre.classList.add('fadeOut', 'slow');
+        btnEnviar.disabled = false;
         
-        if (/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/.test(nombre.value)) {
-            nombre.style.borderBottomColor = 'var(--color-primario)';
-            valNombre.innerHTML = ''
-            valNombre.classList.remove('error', 'fadeIn');
-            valNombre.classList.add('fadeOut', 'slow');
-            btnEnviar.disabled = false;
-            boll = false;
-            inicioApp(boll)
+    } else {
+
+        nombre.style.borderBottomColor = 'red';
+        valNombre.classList.add('error', 'fadeIn');
+        valNombre.classList.remove('fadeOut', 'slow');
+        valNombre.innerHTML = 'Ingrese un nombre válido, gracias. Ejemplo: Miguel'
+        btnEnviar.disabled = true;
             
-        } else {
-            nombre.style.borderBottomColor = 'red';
-            valNombre.classList.add('error', 'fadeIn');
-            valNombre.innerHTML = 'Ingrese un nombre válido, gracias. Ejemplo: Miguel'
-            btnEnviar.disabled = true;
-            boll = true;
-            return boll
-            
-        } 
     }
-    
+        
 }
+    
+
 function validarTelefono(){
 
     if (telefono.value == '') {
 
         telefono.style.borderBottomColor = 'red'
         valTelefono.innerHTML = 'El campo telefono NO debe estar vacio, gracias.'
-        valTelefono.classList.add('error', 'animated', 'fadeIn');
+        valTelefono.classList.remove('fadeOut', 'slow');
+        valTelefono.classList.add('error', 'fadeIn');
         btnEnviar.disabled = true;
         
 
 
-    }else{
+    }else if (/^[9|6]{1}([\d]{2}[-]*){3}[\d]{2}$/.test(telefono.value)) {
         
-        if (/^[9|6]{1}([\d]{2}[-]*){3}[\d]{2}$/.test(telefono.value)) {
-            telefono.style.borderBottomColor = 'var(--color-primario)';
-            valTelefono.innerHTML = ''
-            valTelefono.classList.remove('error', 'fadeIn');
-            valTelefono.classList.add('fadeOut', 'slow');
-            btnEnviar.disabled = false;
-            
-        } else {
-            telefono.style.borderBottomColor = 'red';
-            valTelefono.classList.remove('fadeOut', 'slow');
-            valTelefono.classList.add('error', 'animated', 'fadeIn');
-            valTelefono.innerHTML = 'Ingrese un número de telefono válido, gracias. Ejemplo: 975372XXX'
-            btnEnviar.disabled = true;
-    
-        } 
+        telefono.style.borderBottomColor = 'var(--color-primario)';
+        valTelefono.innerHTML = ''
+        valTelefono.classList.remove('error', 'fadeIn');
+        valTelefono.classList.add('fadeOut', 'slow');
+        btnEnviar.disabled = false;
+        
+    } else {
+        
+        telefono.style.borderBottomColor = 'red';
+        valTelefono.classList.remove('fadeOut', 'slow');
+        valTelefono.classList.add('error', 'fadeIn');
+        valTelefono.innerHTML = 'Ingrese un número de telefono válido, gracias. Ejemplo: 975372XXX'
+        btnEnviar.disabled = true;
+        
     }
-    return true
-
 }
 
 function validarEmail(){
@@ -128,24 +103,27 @@ function validarEmail(){
 
         email.style.borderBottomColor = 'red'
         valEmail.innerHTML = 'El campo email NO debe estar vacio, gracias.'
-        valEmail.classList.add('error', 'animated', 'fadeIn');
+        valEmail.classList.remove('fadeOut', 'slow');
+        valEmail.classList.add('error', 'fadeIn');
         btnEnviar.disabled = true;
 
 
-    }else{
+    }else if (/^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
         
-        if (/^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
-            email.style.borderBottomColor = 'var(--color-primario)';
-            valEmail.innerHTML = ''
-            valEmail.classList.remove('error');
-            btnEnviar.disabled = false;
-        } else {
-            email.style.borderBottomColor = 'red';
-            valEmail.innerHTML = 'Ingrese un email válido, gracias. Ejemplo: correo@correo.cl'
-            valEmail.classList.add('error', 'animated', 'fadeIn');
-            btnEnviar.disabled = true;
-    
-        }
+        email.style.borderBottomColor = 'var(--color-primario)';
+        valEmail.innerHTML = ''
+        valEmail.classList.remove('error', 'fadeIn');
+        valEmail.classList.add('fadeOut', 'slow');
+        btnEnviar.disabled = false;
+        
+    } else {
+        
+        email.style.borderBottomColor = 'red';
+        valEmail.innerHTML = 'Ingrese un email válido, gracias. Ejemplo: correo@correo.cl'
+        valEmail.classList.remove('fadeOut', 'slow');
+        valEmail.classList.add('error', 'fadeIn');
+        btnEnviar.disabled = true;
+        
     }
 
 }
@@ -156,24 +134,27 @@ function validarMensaje(){
 
         mensaje.style.borderBottomColor = 'red'
         valMensaje.innerHTML = 'El campo Menjase NO debe estar vacio, gracias.'
-        valMensaje.classList.add('error', 'animated', 'fadeIn');
+        valMensaje.classList.remove('fadeOut', 'slow');
+        valMensaje.classList.add('error', 'fadeIn');
         btnEnviar.disabled = true;
 
 
-    }else{
+    }else if (/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]*$/.test(mensaje.value)) {
         
-        if (/^[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]*$/.test(mensaje.value)) {
-            mensaje.style.borderBottomColor = 'var(--color-primario)';
-            valMensaje.innerHTML = ''
-            valMensaje.classList.remove('error');
-            btnEnviar.disabled = false;
-        } else {
-            mensaje.style.borderBottomColor = 'red';
-            valMensaje.innerHTML = 'Escriba un mendaje sin simbolos especiales. Gracias'
-            valMensaje.classList.add('error', 'animated', 'fadeIn');
-            btnEnviar.disabled = true;
-    
-        }
+        mensaje.style.borderBottomColor = 'var(--color-primario)';
+        valMensaje.innerHTML = ''
+        valMensaje.classList.remove('error', 'fadeIn');
+        valMensaje.classList.add('fadeOut', 'slow');
+        btnEnviar.disabled = false;
+        
+    } else {
+        
+        mensaje.style.borderBottomColor = 'red';
+        valMensaje.innerHTML = 'Escriba un mendaje sin simbolos especiales. Gracias'
+        valMensaje.classList.remove('fadeOut', 'slow');
+        valMensaje.classList.add('error', 'fadeIn');
+        btnEnviar.disabled = true;
+        
     }
 
 }

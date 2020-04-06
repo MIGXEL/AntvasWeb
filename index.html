@@ -61,12 +61,12 @@
                 <div class="contenedorSobreMi">
                     <div class="miImagen">
                         
-                            <img src="img/sobremi.svg" alt="">
+                            <img id="av-img-sobreMi" src="img/sobremi.svg" alt="">
                         
                     </div>
                     <div class="textoSobreMi">
 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate optio voluptatibus
+                            <p id="av-texto-sobreMi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate optio voluptatibus
                                 unde omnis excepturi voluptatum, accusamus ipsa qui minima dolor accusantium laboriosam.
                                 Facere, sit rem dolorem architecto repellat sed
                                 magni ullam corrupti nisi vel nobis, earum possimus enim? Excepturi ad fugit, adipisci
@@ -86,6 +86,17 @@
                 <div class="contenedorServicios aniview" data-av-animation="bounceInRight">
 
                     <div class="servicio violeta">
+
+                            <h4>Diseño Web</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nisi nihil repudiandae
+                                quae, facere ab repellat quia et labore quod illum delectus? Nam optio impedit earum
+                                maxime delectus veritatis non. Laborum officiis distinctio
+                                magni, quis reprehenderit alias ea culpa sed. Quam id quia facere consectetur.</p>
+                            <img src="img/monitor.png" class="icono">
+                            <img src="img/waves.png" class="ondas">
+
+                    </div>
+                    <div class="servicio celeste">
                         <div class="aniview" data-av-animation="fadeIn slow">
                             <h4>Diseño Web</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nisi nihil repudiandae
@@ -96,7 +107,18 @@
                             <img src="img/waves.png" class="ondas">
                         </div>
                     </div>
-                    <div class="servicio celeste">
+                    <div class="servicio violeta">
+                        <div class="aniview" data-av-animation="fadeIn slow">
+                            <h4>Diseño Web</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nisi nihil repudiandae
+                                quae, facere ab repellat quia et labore quod illum delectus? Nam optio impedit earum
+                                maxime delectus veritatis non. Laborum officiis distinctio
+                                magni, quis reprehenderit alias ea culpa sed. Quam id quia facere consectetur.</p>
+                            <img src="img/monitor.png" class="icono">
+                            <img src="img/waves.png" class="ondas">
+                        </div>
+                    </div>
+                    <!-- <div class="servicio celeste">
                         <div class="aniview" data-av-animation="fadeIn slow">
                             <h4>Diseño Web</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nisi nihil repudiandae
@@ -128,29 +150,7 @@
                             <img src="img/monitor.png" class="icono">
                             <img src="img/waves.png" class="ondas">
                         </div>
-                    </div>
-                    <div class="servicio violeta">
-                        <div class="aniview" data-av-animation="fadeIn slow">
-                            <h4>Diseño Web</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nisi nihil repudiandae
-                                quae, facere ab repellat quia et labore quod illum delectus? Nam optio impedit earum
-                                maxime delectus veritatis non. Laborum officiis distinctio
-                                magni, quis reprehenderit alias ea culpa sed. Quam id quia facere consectetur.</p>
-                            <img src="img/monitor.png" class="icono">
-                            <img src="img/waves.png" class="ondas">
-                        </div>
-                    </div>
-                    <div class="servicio celeste">
-                        <div class="aniview" data-av-animation="fadeIn slow">
-                            <h4>Diseño Web</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nisi nihil repudiandae
-                                quae, facere ab repellat quia et labore quod illum delectus? Nam optio impedit earum
-                                maxime delectus veritatis non. Laborum officiis distinctio
-                                magni, quis reprehenderit alias ea culpa sed. Quam id quia facere consectetur.</p>
-                            <img src="img/monitor.png" class="icono">
-                            <img src="img/waves.png" class="ondas">
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -322,12 +322,12 @@
                             <span id="validarNombre" class="animated"></span>
                             <input type="telefono" name="txtTelefono" class="telefono" id="telefono"
                                 placeholder="Telefono/Celular *">
-                            <span id="validarTelefono"></span>
+                            <span id="validarTelefono" class="animated"></span>
                             <input type="email" name="txtCorreo" class="correo" id="email"
                                 placeholder="Correo Electronico *">
-                            <span id="validarEmail"></span>
+                            <span id="validarEmail" class="animated"></span>
                             <textarea name="txtMensaje" class="mensaje" id="mensaje" placeholder="Mensaje *"></textarea>
-                            <span id="validarMensaje"></span>
+                            <span id="validarMensaje" class="animated"></span>
 
                             <!-- <a href="#!" class="boton">enviar</a> -->
                             <button type="submit" class="boton" id="enviar" name="action">enviar</button>

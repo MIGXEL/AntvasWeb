@@ -89,3 +89,4 @@ $(document).ready(function() {
     $('.aniview').AniView(options);
 
 })
+

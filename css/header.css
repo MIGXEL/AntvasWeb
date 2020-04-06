@@ -87,7 +87,7 @@ header .menu li a{
     text-transform: uppercase;
 }
 header .menu li:hover a{
-   color: var(--color-primario);
+   color: var(--color-tercero);
 }
 
 header .cabezote{
