@@ -86,7 +86,7 @@ $(document).ready(function() {
         animateThreshold: 100,
         scrollPollInterval: 20
     }
-    $('.aniview').AniView(options);
+    /* $('.aniview').AniView(options); */
 
 })
 

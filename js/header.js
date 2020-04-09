@@ -7,6 +7,7 @@ let menuMovilEnlaces = document.querySelectorAll(".menuMovil li");
 let itemTrabajar1 = document.getElementById("itemTrabajar1");
 let itemTrabajar2 = document.getElementById("itemTrabajar2");
 let itemTrabajar3 = document.getElementById("itemTrabajar3");
+const servicio = document.getElementsByClassName("servicio");
 const imgSobreMi = document.getElementById("av-img-sobreMi");
 const textoSobreMi = document.getElementById("av-texto-sobreMi");
 const sections = document.querySelectorAll("section");
@@ -40,6 +41,18 @@ window.addEventListener("scroll", function(){
                 itemTrabajar1.style.opacity = 1;
                 itemTrabajar2.style.opacity = 1;
                 itemTrabajar3.style.opacity = 1;                
+                
+            }
+            
+        }else if (element.id == "servicios") {
+            if (elementTop < tamanoPantalla) {
+
+                for (let i = 0; i < servicio.length; i++) {
+
+                    servicio[i].classList.add('animated', 'fadeInUp', 'slow');
+                    servicio[i].style.opacity = 1;
+                    
+                }
                 
             }
             

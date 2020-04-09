@@ -87,7 +87,7 @@ header .menu li a{
     text-transform: uppercase;
 }
 header .menu li:hover a{
-   color: var(--color-tercero);
+   color: var(--color-primario);
 }
 
 header .cabezote{
@@ -132,14 +132,15 @@ header .cabezote{
 
 .toggle{
     /* background: #ffffff; */
-    display: none;
+    /* display: block; */
     height: 40px;
     width: 50px;
-    /* display: flex; */
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding: 0 10px;
+    position: relative;
 }
 
 .toggle span{
@@ -149,31 +150,32 @@ header .cabezote{
     background: var(--color-primario);
     transition: 0.6s;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.20);
+    position: absolute;
 
     
 }
 
 
-.toggle span:nth-child(2){
-    transform: translateY(5px);
+.toggle span:nth-child(1){
+    transform: translateY(12px);
 }
-.toggle span:nth-child(3){
-    transform: translateY(-5px);
+.toggle span:nth-child(4){
+    transform: translateY(-12px);
 }
 
 .toggle.active span:nth-child(1){
     transform: translateY(-25px);
     opacity: 0;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 .toggle.active span:nth-child(4){
     transform: translateY(25px);
     opacity: 0;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 .toggle.active span:nth-child(2){
-    transform: translateY(11px) rotate(45deg);
+    transform: rotate(45deg);
     transition-delay: .2s;
 }
 .toggle.active span:nth-child(3){
@@ -181,7 +183,7 @@ header .cabezote{
     transition-delay: .2s;
 }
 
-.sticky .toggle{
+/* .sticky .toggle{
     height: 30px;
     width: 40px;
 }
@@ -199,7 +201,7 @@ header .cabezote{
 header.sticky .active span:nth-child(2) {
     transform: translateY(7px) rotate(45deg);
     transition-delay: .2s;
-}
+} */
 
 @keyframes menuIn {
     0%{
