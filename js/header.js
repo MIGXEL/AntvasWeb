@@ -4,18 +4,47 @@ let header = document.querySelector("header");
 let menu = document.getElementById("menu");
 let menuMovil = document.getElementById("menuMovil");
 let menuMovilEnlaces = document.querySelectorAll(".menuMovil li");
-let itemTrabajar1 = document.getElementById("itemTrabajar1");
+/* let itemTrabajar1 = document.getElementById("itemTrabajar1");
 let itemTrabajar2 = document.getElementById("itemTrabajar2");
 let itemTrabajar3 = document.getElementById("itemTrabajar3");
 const servicio = document.getElementsByClassName("servicio");
 const imgSobreMi = document.getElementById("av-img-sobreMi");
 const textoSobreMi = document.getElementById("av-texto-sobreMi");
-const sections = document.querySelectorAll("section");
+const sections = document.querySelectorAll("section"); */
 let mostrar = false;
+const scrollEfect = Array.from(document.getElementsByClassName("scrollEfect"));
+const sections = Array.from(document.querySelectorAll("section"));
+let serviciosScrollTop = scrollEfect.map( item => item.getBoundingClientRect().top - (innerHeight/2))
 
+window.addEventListener('scroll', () =>{
+    serviciosScrollTop.forEach((ele, i) => {
 
+        if (scrollY >= ele) {
 
-window.addEventListener("scroll", function(){
+            if (scrollEfect[i].classList[0] == "av-sobreMi") {
+                
+                scrollEfect[i].classList.add('animated', 'fadeInLeft', 'slow');                
+                scrollEfect[i].style.opacity = 1;  
+
+            }
+            if (scrollEfect[i].classList[0] == "servicio") {
+                
+            scrollEfect[i].classList.add('animated', 'fadeInUp', 'slow');            
+            scrollEfect[i].style.opacity = 1;  
+
+            }
+            if (scrollEfect[i].classList[0] == "item") {
+                
+                scrollEfect[i].classList.add('animated', 'zoomIn', 'slow');                
+                scrollEfect[i].style.opacity = 1;    
+                   
+            }
+        }
+
+    })
+})
+
+/* window.addEventListener("scroll", function(){
     
     sections.forEach(element => {
 
@@ -58,7 +87,7 @@ window.addEventListener("scroll", function(){
             
         };
     });
-});
+}); */
 
 /**************************************************************/
 /*********** AGREGANDO CLASE ACTIVE AL MENU (JQUERY)***********/

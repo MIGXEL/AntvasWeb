@@ -13,6 +13,18 @@ html {
     scroll-behavior: smooth;
 }
 
+.animate {
+    animation: appear .5s forwards;
+}
+
+@keyframes appear{
+
+    to{
+        opacity: 1;
+    }
+
+}
+
 /**************HEADER*******************/
 
 *{
@@ -83,7 +95,7 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin: 50px; */
+    margin: 50px;
 }
 
 .contenedorSobreMi .miImagen div {
@@ -93,17 +105,22 @@ h3 {
 
 .contenedorSobreMi .miImagen img {
     width: 60%;
+    /* opacity: 0; */
+    
+}
+.contenedorSobreMi .miImagen {
+    width: 60%;
     opacity: 0;
     
 }
-
 .contenedorSobreMi .textoSobreMi {
     width: 42%;
     margin: 20px;
+    opacity: 0;
 }
 
 .contenedorSobreMi .textoSobreMi p{
-    opacity: 0;
+    /* opacity: 0; */
     margin: 0 0 20px 0;
 }
 
