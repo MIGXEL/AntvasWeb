@@ -1,9 +1,9 @@
-let hamburgueza = document.getElementById("toggle");
+/* let hamburgueza = document.getElementById("toggle");
 let body = document.querySelector("body");
 let header = document.querySelector("header");
 let menu = document.getElementById("menu");
 let menuMovil = document.getElementById("menuMovil");
-let menuMovilEnlaces = document.querySelectorAll(".menuMovil li");
+let menuMovilEnlaces = document.querySelectorAll(".menuMovil li"); */
 /* let itemTrabajar1 = document.getElementById("itemTrabajar1");
 let itemTrabajar2 = document.getElementById("itemTrabajar2");
 let itemTrabajar3 = document.getElementById("itemTrabajar3");
@@ -104,38 +104,28 @@ $(document).on('click', 'ul li', function(){
 
 /******* Efecto Scroll Menu Fixed */
 
-window.addEventListener("scroll", function(){
-    /* let header = document.querySelector('header'); */
-    header.classList.toggle("sticky", window.scrollY > 0);
-    if (window.scrollY > 0) {
-        header.classList.add('sticky');
-        
-    } else {
-        header.classList.remove('sticky');
-        
-    }
-      
-});
+const menu = document.getElementById('menu');
+const hamburgueza = document.getElementById('hamburgueza');
 
-/******* Efecto Scroll Menu Hamburgueza */
 
-hamburgueza.addEventListener("click", function(){
-    hamburgueza.classList.toggle('active');
-    mostrar = !mostrar;
+/* ------ ------ ------ ------ ------
+ EFECTO MENU MOVIL 
+ ------ ------ ------ ------ ------ */
+hamburgueza.addEventListener('click', () => {
 
-    if (mostrar) {
-        menuMovil.style.display = "flex";
-        menuMovil.style.animation = "menuIn 1s ease-in-out";
-        
-        
-    } else {
-        menuMovil.style.animation = "menuOut 1s ease-in-out";
-
-        setTimeout(() => {
-            menuMovil.style.display = "none";           
-        }, 800);
-                
-    }
-   
+    console.log(menu.classList.value);
+    menu.classList.toggle('activo');
+    hamburgueza.classList.toggle('activo')
 
 })
+
+/* ------ ------ ------ ------ ------
+ EFECTO STICKY SCROLL 
+ ------ ------ ------ ------ ------ */
+ window.addEventListener('scroll', () => {
+
+    const cabezote = document.getElementById('cabezote');
+    cabezote.classList.toggle('sticky', window.scrollY > 0);
+    menu.classList.toggle('sticky', window.scrollY > 0);
+
+ })

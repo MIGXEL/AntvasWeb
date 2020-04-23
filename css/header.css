@@ -1,364 +1,222 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
-:root{
-    --color-primario: #45eba5;
-    --color-secundario: #21aba5;
-    --color-tercero: #1d566e;
-    --color-cuarto: #163a5f;
-    --color-quinto: #dadada;
-    --color-rgba1: linear-gradient(to right, rgba(29, 86, 110, .3), rgba(22, 58, 95, .3));
-
-}
-
-body{
-    background: var(--color-quinto);
-}
-
-
 header{
+    z-index: 10;
+}
+.av-cabezote{
+    background: var(--color-rgba1);
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
+    height: 5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    transition: 0.6s;
-    padding: 40px 100px;
-    z-index: 1000000;
-    animation: menuIn 2s ease-in-out;
-    /* height: 4rem; */
+    transition: all .5s ease-in-out;
+    z-index: 10;
 }
 
-.sticky{
-    padding: 15px 100px;
-    background: var(--color-tercero);
-    -webkit-box-shadow: 0px -2px 14px 0px;
-    -moz-box-shadow: 0px -2px 14px 0px;
-    box-shadow: 0px -2px 14px 0px;
+.av-caja-logo{
+    width: 8rem;
 }
 
-header .logo{
-    position: relative;    
+.av-caja-logo img{
+    width: 100%;
+}
+
+.av-cabezote .av-menu{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+}
+
+.av-cabezote .av-menu li {
+    width: 100%;
+    text-align: center;
+    padding: .8rem 0;
+    /* margin: 0 1.5rem; */
+}
+
+.av-cabezote .av-menu li a{
     color: var(--color-primario);
-    font-weight: 700;
-    color: var(--color-primario);
-    text-decoration: none;
-    font-size: 2em;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.6s;
-}
-header .logo1{
+    font-size: 1.2rem;
+    text-align: center;
     
-    height: 3rem;
-    transition: 0.6s;
+}
+.av-cabezote.sticky{
+    background: var(--color-rgba1);
+    height: 4rem;
 }
 
-header .menu{
+
+/* ------ ------ ------ ------ ------
+ MENU HAMBUERGUZA 
+ ------ ------ ------ ------ ------ */
+
+ .av-cabezote .av-hamburgueza{
     position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 1.8rem;
+    cursor: pointer;
+ }
+
+ .av-cabezote .av-hamburgueza span{
+    position: absolute;
+    width: 2rem;
+    height: .3rem;
+    background: var(--color-primario);
+    transition: all .5s ease-in-out;
+ }
+
+ .av-hamburgueza span:nth-child(1){
+     transform: translateY(-0.6rem);
+ }
+ .av-hamburgueza span:nth-child(3){
+    transform: translateY(0.6rem);
+}
+
+.av-hamburgueza.activo span:nth-child(1){
+    transform: rotate(45deg)
+}
+.av-hamburgueza.activo span:nth-child(3){
+    transform: rotate(-45deg);
+}
+.av-hamburgueza.activo span:nth-child(2){
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+/* ------ ------ ------ ------ ------
+ REDES SOCIALES 
+ ------ ------ ------ ------ ------ */
+ .av-redesSociales {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* display: none; */
 }
 
-header .menu li{
-    position: relative;
-    list-style: none;
-    padding: 5px 10px;
-    transition: .6s;
-}
-header .menu li:hover{
-    background: var(--color-tercero);
-    
-}
-
-header .menu li.active{
-    background: var(--color-primario);
-    /* border-bottom: 2px solid var(--color-cuarto); */
-    
-    
-}
-header .menu li.active a{
-    color: var(--color-tercero);
-}
-
-header .menu li a{
-    position: relative;
-    margin: 0 15px;
-    text-decoration: none;
-    color: var(--color-primario);
-    letter-spacing: 2px;
-    font-weight: 700;
-    transition: 0.6s;
-    font-size: 18px;
-    text-transform: uppercase;
-}
-header .menu li:hover a{
-   color: var(--color-primario);
-}
-
-header .cabezote{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.banner{
-    position: relative;
-/*     -webkit-clip-path: circle(75.9% at 100% 15%);
-    clip-path: circle(75.9% at 100% 15%); */
-    width: 100%;
-    height: 100vh;
-    background: var(--color-rgba1), url(../img/bg-header.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-}
-.wave{
-    position: absolute;
-    bottom: 0;
-}
-
-.sticky .logo,
-.sticky .menuMovil li a{
-    color: var(--color-primario);
-}
-
-.sticky .menu li:hover{
-    background: var(--color-primario);
-}
-.sticky .menu li:hover a{
-    color: var(--color-tercero);
-}
-/* .sticky .active li{
-    background: var(--color-primario);
-    color: var(--color-tercero);
-} */
-
-/* ------ ------ MENU HAMBURGUEZA ------ ------ */
-
-.toggle{
-    /* background: #ffffff; */
-    /* display: block; */
-    height: 40px;
-    width: 50px;
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 10px;
-    position: relative;
-}
-
-.toggle span{
-    
-    width: 40px;
-    height: 6px;
-    background: var(--color-primario);
-    transition: 0.6s;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.20);
-    position: absolute;
-
-    
+.av-redesSociales li {
+    margin: 0 .5rem;
 }
 
 
-.toggle span:nth-child(1){
-    transform: translateY(12px);
-}
-.toggle span:nth-child(4){
-    transform: translateY(-12px);
+.av-redesSociales li a i {
+    font-size: 1.2rem;
+    padding: .2rem;
+
 }
 
-.toggle.active span:nth-child(1){
-    transform: translateY(-25px);
-    opacity: 0;
-    transition: 0.5s;
-}
-.toggle.active span:nth-child(4){
-    transform: translateY(25px);
-    opacity: 0;
-    transition: 0.5s;
-}
+/* ------ ------ ------ ------ ------
+ RESPONSIVE 
+ ------ ------ ------ ------ ------ */
 
-.toggle.active span:nth-child(2){
-    transform: rotate(45deg);
-    transition-delay: .2s;
-}
-.toggle.active span:nth-child(3){
-    transform: rotate(-45deg);
-    transition-delay: .2s;
-}
-
-/* .sticky .toggle{
-    height: 30px;
-    width: 40px;
-}
-.sticky .toggle span{
-    background: var(--color-primario);
-    width: 40px;
-}
-
-.sticky span:nth-child(2){
-    transform: translateY(4px);
-}
-.sticky span:nth-child(3){
-    transform: translateY(-4px);
-}
-header.sticky .active span:nth-child(2) {
-    transform: translateY(7px) rotate(45deg);
-    transition-delay: .2s;
-} */
-
-@keyframes menuIn {
-    0%{
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    100%{
-        transform: translateY(0%);
-        opacity: 1;
-    }
-}
-
-@keyframes menuOut {
-    0%{
-        transform: translateY(0%);
-        opacity: 1;
-    }
-    100%{
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-}
-
-/* ------ ------ MENU MOVIL ------ ------ */
-
-header .menuMovil{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
-    display: none;
-    transition: 0.6s ease-out;
-}
-header .menuMovil li{
-    position: relative;
-    list-style: none;
-}
-
-header .menuMovil li a{
-    position: relative;
-    margin: 0 15px;
-    text-decoration: none;
-    color: var(--color-tercero);
-    letter-spacing: 2px;
-    font-weight: 700;
-    transition: 0.6s;
-}
-
-/* ------ ------ ------ ------ ------ ------ ------ 
-ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
- ------ ------ ------ ------ ------ ------ ------ */
-@media (min-width:1200px) {
-}
-/* ------ ------ ------ ------ ------ ------ ------
-ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
- ------ ------ ------ ------ ------ ------ ------ */
-@media (max-width:1199px) and (min-width:992px) {
-
-    header{
-        /* flex-direction: column;
-        transition: 0.6s ease-in-out; */
-        padding: 40px 35px;
-    }
-    .sticky{
-        padding: 15px 35px;
-    }
-    header .menu li a{
-        width: 100%;
-        text-align: center;
-        font-size: 15px;
-    }
-}
-/* ------ ------ ------ ------ ------ ------ ------
-ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
- ------ ------ ------ ------ ------ ------ ------ */
-@media (max-width:991px) and (min-width:768px) {
-    header{
-        flex-direction: column;
-    }
-    header .menu{
+ /* ------ ------ ------ ------ ------ ------ ------ 
+ ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
+  ------ ------ ------ ------ ------ ------ ------ */
+ @media (min-width:1200px) {
+ }
+ /* ------ ------ ------ ------ ------ ------ ------
+ ESCRITORIO MEDIANO O TABLET HORIZONTAL (MD revisamos en 1024px)
+  ------ ------ ------ ------ ------ ------ ------ */
+ @media (max-width:1199px) and (min-width:992px) {
+    .av-cabezote .av-menu li:last-child{
         display: none;
     }
-    header .menuMovil{
-        padding: 40px;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
+    .av-cabezote .av-menu li{
+        margin: 0 1.5rem;
+    }
+ }
+ /* ------ ------ ------ ------ ------ ------ ------
+ ESCRITORIO PEQUEÑO O TABLET VERTICAL (SM revisamos en 768px)
+  ------ ------ ------ ------ ------ ------ ------ */
+ @media (max-width:991px) and (min-width:768px) {
+
+    .av-cabezote .av-hamburgueza{
         
-    }
-    header .menuMovil li{
-        width: 100%;
-        padding: 30px 100px;
-        text-align: center;
-    }
-    header .menuMovil li a{
-        width: 100%;
-        text-align: center;
-        font-size: 20px;
-        color: var(--color-primario);
-        text-transform: uppercase;
-    }
-    .toggle{
         display: flex;
     }
-   
-}
-/* ------ ------ ------ ------ ------ ------ ------
-MOVIL (XS revisamos en 320px)
- ------ ------ ------ ------ ------ ------ ------*/
-@media (max-width:767px) {
-    .sticky{
-        padding: 20px 20px;
-        background: var(--color-tercero);
-    }
-    header .cabezote{
-        display: flex;
+
+    .av-cabezote{
+        
         justify-content: space-between;
-        align-items: center;
-        width: 100%;
+        padding: 1.5rem;
     }
-    header{
-        flex-direction: column;
-        padding: 20px 20px;
-    }
-    header .menu{
-        display: none;
-    }
-    header .menuMovil{
+
+    .av-cabezote .av-menu{
         
-        padding: 40px;
+        position: absolute;
         flex-direction: column;
-        width: 100%;
-        align-items: center;
+        background: var(--color-tercero);
+        width: 70vw;
+        height: 80vh;
+        top: 5rem;
+        right: 0;
+        transform: translateX(100%);
+        background: var(--color-rgba1);
+        transition: transform .5s ease-in;
     }
-    header .menuMovil li{
-        width: 100%;
-        padding: 30px 100px;
-        text-align: center;
+    .av-cabezote .av-menu li{
+        
+        border-bottom: 1px solid var(--color-cuarto);
+        
     }
-    header .menuMovil li a{
-        width: 100%;
-        text-align: center;
-        font-size: 20px;
-        color: var(--color-primario);
-        text-transform: uppercase;
+    .sticky .av-menu {
+        background: var(--color-rgba1);
+        top: 4rem;
+        
     }
-    .toggle{
+ }
+ /* ------ ------ ------ ------ ------ ------ ------
+ MOVIL (XS revisamos en 320px)
+  ------ ------ ------ ------ ------ ------ ------*/
+ @media (max-width:767px) {
+
+    body{
+        overflow-x: hidden;
+    }
+    .av-cabezote .av-hamburgueza{
+        
         display: flex;
     }
+
+    .av-cabezote{
+        justify-content: space-between;
+        padding: 1.5rem;
+    }
+
+    .av-cabezote .av-menu{
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: var(--color-tercero);
+        width: 60%;
+        top: 5rem;
+        right: 0;
+        transform: translateX(100%);
+        background: var(--color-rgba1);
+        transition: all .5s ease-in;
+    }
+    .av-cabezote .av-menu li{
+        border-bottom: 1px solid var(--color-cuarto);
+    }
+    
+    .av-menu.sticky {
+        top: 4rem;
+    }
+    .av-cabezote .av-menu li {
+       margin: 0;
+    }
+    .av-redesSociales li {
+        margin: 0;
+    }
+
+}
+
+.av-menu.activo{
+
+    transform: translate(0);
+    
 }
